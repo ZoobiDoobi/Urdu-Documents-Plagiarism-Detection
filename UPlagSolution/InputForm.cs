@@ -41,11 +41,12 @@ namespace UPlagSolution
             }
             Algorithm applyAlgorithm = new Algorithm(corpusDocuments, queryContent);
             List<Matrix> tempSvd = applyAlgorithm.LowRankApproximation();
-            txtCorpusVectors.Text = tempSvd[2].ToString();
+            //txtCorpusVectors.Text = tempSvd[2].ToString();
             List<double> tempSimilarities = applyAlgorithm.QueryVectors();
-            foreach (var item in tempSimilarities)
+            for (int i = 0; i < tempSimilarities.Count; i++)
             {
-                txtCosineSimilarity.Text += item.ToString() + Environment.NewLine;
+                tempSimilarities[i] = tempSimilarities[i] * 100;
+                txtCosineSimilarity.Text += tempSimilarities[i].ToString("00.00")+"%" +" with document"+(i+1)+ Environment.NewLine;
             }
         }
 
