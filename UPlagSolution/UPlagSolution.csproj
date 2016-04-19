@@ -87,8 +87,38 @@
     <Compile Include="ParagraphMatchingForm.Designer.cs">
       <DependentUpon>ParagraphMatchingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Preporocessing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preporocessing.Designer.cs">
+      <DependentUpon>Preporocessing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowMatrices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowMatrices.Designer.cs">
+      <DependentUpon>ShowMatrices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowQueryVectors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowQueryVectors.Designer.cs">
+      <DependentUpon>ShowQueryVectors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowRankApprox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowRankApprox.Designer.cs">
+      <DependentUpon>ShowRankApprox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowSVDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowSVDForm.Designer.cs">
+      <DependentUpon>ShowSVDForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="InputForm.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ParagraphMatchingForm.resx">
       <DependentUpon>ParagraphMatchingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preporocessing.resx">
+      <DependentUpon>Preporocessing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,6 +140,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ShowMatrices.resx">
+      <DependentUpon>ShowMatrices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowQueryVectors.resx">
+      <DependentUpon>ShowQueryVectors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowRankApprox.resx">
+      <DependentUpon>ShowRankApprox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowSVDForm.resx">
+      <DependentUpon>ShowSVDForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="keypair.snk" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

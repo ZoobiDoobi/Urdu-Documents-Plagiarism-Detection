@@ -21,9 +21,8 @@ namespace UPlagSolution.AlgorithmModules
         private int _maxTermFreqQuery = 0; //Should it be initialized to zero?
         private int[] _docFreq;
         private int[,] _termFreqOfCorpus; //This is jagged array. What is benefit of using it?
-        private double[,] _termFreqOfQuery;
-        private double[,] _termWeightCorpus; // this will contain our final tf-idf matrix of corpus
-        private double[,] _termWeightQuery; //this will contain final tf-idf of query matrix
+        public double[,] _termFreqOfQuery;
+        public double[,] _termWeightCorpus; // this will contain our final tf-idf matrix of corpus
 
 
         public Algorithm(string[] documents, string query)
@@ -41,8 +40,8 @@ namespace UPlagSolution.AlgorithmModules
 
         private void Initializer()
         {
-            _allTermsOfCorpus = GenerateTermsOfDocuments(_corpusDocuments);
-            _allTermsOfQuery = GenerateTermsOfQuery(_queryDocument);
+            _allTermsOfCorpus = GenerateTermsOfDocuments();
+            _allTermsOfQuery = GenerateTermsOfQuery();
             int count = 0; //This approach can create problems though. so keep it in mind.
             foreach (var item in _allTermsOfCorpus)
             {
@@ -66,7 +65,6 @@ namespace UPlagSolution.AlgorithmModules
             _termFreqOfCorpus = new int[_totalUniqueTerms, _totalCorpusDocs];
             _termFreqOfQuery = new double[_totalUniqueTerms, 1];
             _termWeightCorpus = new double[_totalUniqueTerms, _totalCorpusDocs];
-            _termWeightQuery = new double[_totalUniqueTerms, 1];
             _docFreq = new int[_totalUniqueTerms]; //
             _maxTermFreqCorpus = new int[_totalCorpusDocs];
 
@@ -89,13 +87,13 @@ namespace UPlagSolution.AlgorithmModules
             }
         }
 
-        public List<string> GenerateTermsOfDocuments(string[] documents)
+        public List<string> GenerateTermsOfDocuments()
         {
             List<string> _termsList = new List<string>();
-            for (int i = 0; i < documents.Length; i++)
+            for (int i = 0; i < _corpusDocuments.Length; i++)
             {
                 Tokeniser _tokeniser = new Tokeniser();
-                string[] _termsArrayOneDoc = _tokeniser.Tokenize(documents[i]);
+                string[] _termsArrayOneDoc = _tokeniser.Tokenize(_corpusDocuments[i]);
                 for (int j = 0; j < _termsArrayOneDoc.Length; j++)
                 {
                     _termsList.Add(_termsArrayOneDoc[j]);
@@ -104,11 +102,11 @@ namespace UPlagSolution.AlgorithmModules
             return _termsList;
         }
 
-        public List<string> GenerateTermsOfQuery(string query)
+        public List<string> GenerateTermsOfQuery()
         {
             List<string> _termsList = new List<string>();
             Tokeniser _tokeniser = new Tokeniser();
-            string[] _termsArrayQuery = _tokeniser.Tokenize(query);
+            string[] _termsArrayQuery = _tokeniser.Tokenize(_queryDocument);
             for (int i = 0; i < _termsArrayQuery.Length; i++)
             {
                 _termsList.Add(_termsArrayQuery[i]);
@@ -225,7 +223,7 @@ namespace UPlagSolution.AlgorithmModules
         /// same as above but for query document
         /// </summary>
         /// <returns></returns>
-        private double[,] GenerateTermFreqOfQuery()
+        public double[,] GenerateTermFreqOfQuery()
         {
             Dictionary<string, int> occurenceOfTerms = GetTermOccurence(_queryDocument);
             foreach (var item in occurenceOfTerms)
@@ -256,12 +254,6 @@ namespace UPlagSolution.AlgorithmModules
             int maxFrequency = _maxTermFreqCorpus[doc];
             return ((double)frequency / maxFrequency);
         }
-        //public double GetTermFrequencyOfQuery(int term)
-        //{
-        //    int frequency = _termFreqOfQuery[term, 0];
-        //    int maxFrequency = _maxTermFreqQuery;
-        //    return ((double)frequency / maxFrequency);
-        //}
 
         private double GetInverseDocumentFreq(int term)
         {

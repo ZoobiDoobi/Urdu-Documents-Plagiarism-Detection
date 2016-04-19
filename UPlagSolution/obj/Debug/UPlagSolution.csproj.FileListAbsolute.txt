@@ -13,3 +13,8 @@ C:\Users\Zubair\documents\visual studio 2015\Projects\UPlagSolution\UPlagSolutio
 C:\Users\Zubair\documents\visual studio 2015\Projects\UPlagSolution\UPlagSolution\obj\Debug\UPlagSolution.exe
 C:\Users\Zubair\documents\visual studio 2015\Projects\UPlagSolution\UPlagSolution\obj\Debug\UPlagSolution.pdb
 C:\Users\Zubair\documents\visual studio 2015\Projects\UPlagSolution\UPlagSolution\obj\Debug\UPlagSolution.csprojResolveAssemblyReference.cache
+C:\Users\Zubair\documents\visual studio 2015\Projects\UPlagSolution\UPlagSolution\obj\Debug\UPlagSolution.Preporocessing.resources
+C:\Users\Zubair\documents\visual studio 2015\Projects\UPlagSolution\UPlagSolution\obj\Debug\UPlagSolution.ShowMatrices.resources
+C:\Users\Zubair\documents\visual studio 2015\Projects\UPlagSolution\UPlagSolution\obj\Debug\UPlagSolution.ShowSVDForm.resources
+C:\Users\Zubair\documents\visual studio 2015\Projects\UPlagSolution\UPlagSolution\obj\Debug\UPlagSolution.ShowQueryVectors.resources
+C:\Users\Zubair\documents\visual studio 2015\Projects\UPlagSolution\UPlagSolution\obj\Debug\UPlagSolution.ShowRankApprox.resources

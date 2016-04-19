@@ -441,7 +441,6 @@ namespace UPlagSolution.AlgorithmModules
 ,"علاقوں"
 ,"کوتر"
 ,"کیے"
-
 ,"لوسبت"
 ,"هوکٌہ"
 ,"ہن"
@@ -456,7 +455,7 @@ namespace UPlagSolution.AlgorithmModules
 ,"ہوئی"
 ,"هتعلق"
 ,"بگسیر"
-,"ہوگئی"
+,"گئ"
 ,"علاقے"
 ,"کوروں"
 ,"گئی"
@@ -527,7 +526,6 @@ namespace UPlagSolution.AlgorithmModules
 ,"کو"
 ,"ہیں"
 ,"کا"
-
 
             };
         public StopWordsHandler()
