@@ -21,6 +21,7 @@ namespace UPlagSolution
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = Directory.GetCurrentDirectory();
             ofd.Filter = "Text Files(*.txt)|*.txt";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -32,14 +33,7 @@ namespace UPlagSolution
 
         private void btnAnalyze_Click(object sender, EventArgs e)
         {
-            //This is temporary implementaion.take only text files in that folder.
-            //This line will get the files names of all the text files in Corpus directory
-            string[] fileNames = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), @"Corpus"));
-            corpusDocuments = new string[fileNames.Length];
-            for (int i = 0; i < fileNames.Length; i++)
-            {
-                corpusDocuments[i] = File.ReadAllText(fileNames[i]);
-            }
+            
             applyAlgorithm = new Algorithm(corpusDocuments, queryContent);
             List<Matrix> tempSvd = applyAlgorithm.LowRankApproximation();
             //txtCorpusVectors.Text = tempSvd[2].ToString();
@@ -79,6 +73,18 @@ namespace UPlagSolution
             preprocessingForm.AlgObjPreProcessForm = applyAlgorithm;
             preprocessingForm.Visible = true;
             Visible = false;
+        }
+
+        private void InputForm_Load(object sender, EventArgs e)
+        {
+            //This is temporary implementaion.take only text files in that folder.
+            //This line will get the files names of all the text files in Corpus directory
+            string[] fileNames = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), @"Corpus"));
+            corpusDocuments = new string[fileNames.Length];
+            for (int i = 0; i < fileNames.Length; i++)
+            {
+                corpusDocuments[i] = File.ReadAllText(fileNames[i]);
+            }
         }
     }
 }

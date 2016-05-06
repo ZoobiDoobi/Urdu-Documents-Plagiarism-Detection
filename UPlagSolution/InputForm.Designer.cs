@@ -42,6 +42,8 @@
             this.txtResult2 = new System.Windows.Forms.TextBox();
             this.txtResult1 = new System.Windows.Forms.TextBox();
             this.btnShowAlgorithmSteps = new MetroFramework.Controls.MetroButton();
+            this.txtResult6 = new System.Windows.Forms.TextBox();
+            this.txtResult7 = new System.Windows.Forms.TextBox();
             this.metroPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -151,6 +153,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtResult7);
+            this.groupBox1.Controls.Add(this.txtResult6);
             this.groupBox1.Controls.Add(this.txtResult5);
             this.groupBox1.Controls.Add(this.txtResult4);
             this.groupBox1.Controls.Add(this.txtResult3);
@@ -159,7 +163,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(23, 354);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1017, 204);
+            this.groupBox1.Size = new System.Drawing.Size(1017, 276);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Results";
@@ -220,11 +224,29 @@
             this.btnShowAlgorithmSteps.UseSelectable = true;
             this.btnShowAlgorithmSteps.Click += new System.EventHandler(this.btnShowAlgorithmSteps_Click);
             // 
+            // txtResult6
+            // 
+            this.txtResult6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtResult6.Location = new System.Drawing.Point(6, 191);
+            this.txtResult6.Name = "txtResult6";
+            this.txtResult6.ReadOnly = true;
+            this.txtResult6.Size = new System.Drawing.Size(1005, 27);
+            this.txtResult6.TabIndex = 5;
+            // 
+            // txtResult7
+            // 
+            this.txtResult7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtResult7.Location = new System.Drawing.Point(6, 224);
+            this.txtResult7.Name = "txtResult7";
+            this.txtResult7.ReadOnly = true;
+            this.txtResult7.Size = new System.Drawing.Size(1005, 27);
+            this.txtResult7.TabIndex = 6;
+            // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 604);
+            this.ClientSize = new System.Drawing.Size(1063, 644);
             this.Controls.Add(this.btnShowAlgorithmSteps);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.metroPanel1);
@@ -235,6 +257,7 @@
             this.Name = "InputForm";
             this.Text = "Check Plagiarism Against Documents";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InputForm_FormClosing);
+            this.Load += new System.EventHandler(this.InputForm_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -260,6 +283,8 @@
         private System.Windows.Forms.TextBox txtResult2;
         private System.Windows.Forms.TextBox txtResult1;
         private MetroFramework.Controls.MetroButton btnShowAlgorithmSteps;
+        private System.Windows.Forms.TextBox txtResult7;
+        private System.Windows.Forms.TextBox txtResult6;
     }
 }
 

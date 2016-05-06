@@ -20,7 +20,7 @@ namespace UPlagSolution.AlgorithmModules
         /// <returns>it returns a string array whose each index contains a token.</returns>
         public string[] Tokenize(string documentContents)
         {
-            string pattern = "[ ۔،؛:)(!؟/؎{}]"; //it will match space and other punctuation marks.
+            string pattern = "[ ۔،؛:)(!؟/؎{}‘’0123456789]"; //it will match space and other punctuation marks.
             Regex _regex = new Regex(pattern);
             string[] tokens = _regex.Split(documentContents);
 

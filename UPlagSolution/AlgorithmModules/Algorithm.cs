@@ -301,10 +301,10 @@ namespace UPlagSolution.AlgorithmModules
         public List<Matrix> LowRankApproximation()
         {
             SVD tempSvd = CalculateSVD();
-            Matrix afterRankU = tempSvd.U.SubMatrix(0, tempSvd.U.Rows - 1, 0, 1);
-            Matrix afterRankVH = tempSvd.VH.SubMatrix(0, tempSvd.VH.Rows - 1, 0, 1);
-            Matrix afterRankV = tempSvd.V.SubMatrix(0, tempSvd.V.Rows - 1, 0, 1);
-            Matrix afterRankS = tempSvd.S.SubMatrix(0, 1, 0, 1); //9 columns and 9 rows.
+            Matrix afterRankU = tempSvd.U.SubMatrix(0, tempSvd.U.Rows - 1, 0, 4);
+            Matrix afterRankVH = tempSvd.VH.SubMatrix(0, tempSvd.VH.Rows - 1, 0, 4);
+            Matrix afterRankV = tempSvd.V.SubMatrix(0, tempSvd.V.Rows - 1, 0, 4);
+            Matrix afterRankS = tempSvd.S.SubMatrix(0, 4, 0, 4); 
             List<Matrix> reducedMatrices = new List<Matrix>();
 
             reducedMatrices.Add(afterRankS);
