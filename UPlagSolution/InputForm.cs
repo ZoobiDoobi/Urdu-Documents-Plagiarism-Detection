@@ -1,4 +1,5 @@
 ﻿using Bluebit.MatrixLibrary;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,7 @@ namespace UPlagSolution
         {
             
             applyAlgorithm = new Algorithm(corpusDocuments, queryContent);
+            applyAlgorithm.RankKValue = Convert.ToInt32( rankValueNumericUpDown.Value);
             List<Matrix> tempSvd = applyAlgorithm.LowRankApproximation();
             //txtCorpusVectors.Text = tempSvd[2].ToString();
             List<double> tempSimilarities = applyAlgorithm.QueryVectors();
@@ -85,6 +87,24 @@ namespace UPlagSolution
             {
                 corpusDocuments[i] = File.ReadAllText(fileNames[i]);
             }
+        }
+
+        private void btnClearAll_Click(object sender, EventArgs e)
+        {
+            ClearAllTextBoxes();
+            
+        }
+        private void ClearAllTextBoxes()
+        {
+            //I had to do this instead of foreach loop because of MetroTextBox :\
+            txtInputQuery.Clear();
+            txtResult1.Clear();txtResult1.BackColor = System.Drawing.Color.White;
+            txtResult2.Clear(); txtResult2.BackColor = System.Drawing.Color.White;
+            txtResult3.Clear(); txtResult3.BackColor = System.Drawing.Color.White;
+            txtResult4.Clear(); txtResult4.BackColor = System.Drawing.Color.White;
+            txtResult5.Clear(); txtResult5.BackColor = System.Drawing.Color.White;
+            txtResult6.Clear(); txtResult6.BackColor = System.Drawing.Color.White;
+            txtResult7.Clear(); txtResult7.BackColor = System.Drawing.Color.White;
         }
     }
 }

@@ -36,16 +36,20 @@
             this.radioWithoutSynReplacement = new System.Windows.Forms.RadioButton();
             this.radioWithSynReplacement = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtResult7 = new System.Windows.Forms.TextBox();
+            this.txtResult6 = new System.Windows.Forms.TextBox();
             this.txtResult5 = new System.Windows.Forms.TextBox();
             this.txtResult4 = new System.Windows.Forms.TextBox();
             this.txtResult3 = new System.Windows.Forms.TextBox();
             this.txtResult2 = new System.Windows.Forms.TextBox();
             this.txtResult1 = new System.Windows.Forms.TextBox();
             this.btnShowAlgorithmSteps = new MetroFramework.Controls.MetroButton();
-            this.txtResult6 = new System.Windows.Forms.TextBox();
-            this.txtResult7 = new System.Windows.Forms.TextBox();
+            this.rankValueNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnClearAll = new MetroFramework.Controls.MetroButton();
             this.metroPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rankValueNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // txtInputQuery
@@ -168,6 +172,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Results";
             // 
+            // txtResult7
+            // 
+            this.txtResult7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtResult7.Location = new System.Drawing.Point(6, 224);
+            this.txtResult7.Name = "txtResult7";
+            this.txtResult7.ReadOnly = true;
+            this.txtResult7.Size = new System.Drawing.Size(1005, 27);
+            this.txtResult7.TabIndex = 6;
+            // 
+            // txtResult6
+            // 
+            this.txtResult6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtResult6.Location = new System.Drawing.Point(6, 191);
+            this.txtResult6.Name = "txtResult6";
+            this.txtResult6.ReadOnly = true;
+            this.txtResult6.Size = new System.Drawing.Size(1005, 27);
+            this.txtResult6.TabIndex = 5;
+            // 
             // txtResult5
             // 
             this.txtResult5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -216,37 +238,65 @@
             // 
             // btnShowAlgorithmSteps
             // 
-            this.btnShowAlgorithmSteps.Location = new System.Drawing.Point(625, 299);
+            this.btnShowAlgorithmSteps.Location = new System.Drawing.Point(833, 299);
             this.btnShowAlgorithmSteps.Name = "btnShowAlgorithmSteps";
-            this.btnShowAlgorithmSteps.Size = new System.Drawing.Size(415, 42);
+            this.btnShowAlgorithmSteps.Size = new System.Drawing.Size(207, 42);
             this.btnShowAlgorithmSteps.TabIndex = 6;
             this.btnShowAlgorithmSteps.Text = "Algorithm Steps";
             this.btnShowAlgorithmSteps.UseSelectable = true;
             this.btnShowAlgorithmSteps.Click += new System.EventHandler(this.btnShowAlgorithmSteps_Click);
             // 
-            // txtResult6
+            // rankValueNumericUpDown
             // 
-            this.txtResult6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtResult6.Location = new System.Drawing.Point(6, 191);
-            this.txtResult6.Name = "txtResult6";
-            this.txtResult6.ReadOnly = true;
-            this.txtResult6.Size = new System.Drawing.Size(1005, 27);
-            this.txtResult6.TabIndex = 5;
+            this.rankValueNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rankValueNumericUpDown.Location = new System.Drawing.Point(142, 287);
+            this.rankValueNumericUpDown.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.rankValueNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.rankValueNumericUpDown.Name = "rankValueNumericUpDown";
+            this.rankValueNumericUpDown.Size = new System.Drawing.Size(120, 26);
+            this.rankValueNumericUpDown.TabIndex = 7;
+            this.rankValueNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // txtResult7
+            // label1
             // 
-            this.txtResult7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtResult7.Location = new System.Drawing.Point(6, 224);
-            this.txtResult7.Name = "txtResult7";
-            this.txtResult7.ReadOnly = true;
-            this.txtResult7.Size = new System.Drawing.Size(1005, 27);
-            this.txtResult7.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(25, 287);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Rank K Value";
+            // 
+            // btnClearAll
+            // 
+            this.btnClearAll.Location = new System.Drawing.Point(625, 299);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(202, 42);
+            this.btnClearAll.TabIndex = 9;
+            this.btnClearAll.Text = "Clear All";
+            this.btnClearAll.UseSelectable = true;
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
             // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1063, 644);
+            this.Controls.Add(this.btnClearAll);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.rankValueNumericUpDown);
             this.Controls.Add(this.btnShowAlgorithmSteps);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.metroPanel1);
@@ -262,6 +312,7 @@
             this.metroPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rankValueNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,6 +336,9 @@
         private MetroFramework.Controls.MetroButton btnShowAlgorithmSteps;
         private System.Windows.Forms.TextBox txtResult7;
         private System.Windows.Forms.TextBox txtResult6;
+        private System.Windows.Forms.NumericUpDown rankValueNumericUpDown;
+        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroButton btnClearAll;
     }
 }
 

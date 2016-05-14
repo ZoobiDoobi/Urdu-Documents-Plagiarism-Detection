@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlgorithmModules\Algorithm.cs" />
+    <Compile Include="AlgorithmModules\CosineSimilarity.cs" />
     <Compile Include="AlgorithmModules\StopWordsHandler.cs" />
     <Compile Include="AlgorithmModules\SynonymReplacement.cs" />
     <Compile Include="AlgorithmModules\Tokeniser.cs" />

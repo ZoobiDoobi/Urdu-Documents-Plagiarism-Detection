@@ -23,7 +23,11 @@ namespace UPlagSolution
 
         private void btnNextRank_Click(object sender, EventArgs e)
         {
+            ShowQueryVectors showQueryVectors = new ShowQueryVectors();
+            showQueryVectors.AlgorithmObject = AlgorithmObject;
+            showQueryVectors.Visible = true;
 
+            Visible = false;
         }
 
         private void btnShow_Click(object sender, EventArgs e)

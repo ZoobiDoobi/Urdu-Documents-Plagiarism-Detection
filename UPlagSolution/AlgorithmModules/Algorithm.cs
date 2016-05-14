@@ -24,6 +24,10 @@ namespace UPlagSolution.AlgorithmModules
         public double[,] _termFreqOfQuery;
         public double[,] _termWeightCorpus; // this will contain our final tf-idf matrix of corpus
 
+        public int RankKValue { get; set; }
+
+        public double[] FinalQueryVectors;
+
 
         public Algorithm(string[] documents, string query)
         {
@@ -301,10 +305,10 @@ namespace UPlagSolution.AlgorithmModules
         public List<Matrix> LowRankApproximation()
         {
             SVD tempSvd = CalculateSVD();
-            Matrix afterRankU = tempSvd.U.SubMatrix(0, tempSvd.U.Rows - 1, 0, 4);
-            Matrix afterRankVH = tempSvd.VH.SubMatrix(0, tempSvd.VH.Rows - 1, 0, 4);
-            Matrix afterRankV = tempSvd.V.SubMatrix(0, tempSvd.V.Rows - 1, 0, 4);
-            Matrix afterRankS = tempSvd.S.SubMatrix(0, 4, 0, 4); 
+            Matrix afterRankU = tempSvd.U.SubMatrix(0, tempSvd.U.Rows - 1, 0, RankKValue);
+            Matrix afterRankVH = tempSvd.VH.SubMatrix(0, tempSvd.VH.Rows - 1, 0, RankKValue);
+            Matrix afterRankV = tempSvd.V.SubMatrix(0, tempSvd.V.Rows - 1, 0, RankKValue);
+            Matrix afterRankS = tempSvd.S.SubMatrix(0, RankKValue, 0, RankKValue); 
             List<Matrix> reducedMatrices = new List<Matrix>();
 
             reducedMatrices.Add(afterRankS);
@@ -326,48 +330,33 @@ namespace UPlagSolution.AlgorithmModules
             Matrix inverseOfS = reducedS.Inverse();
             Matrix reducedV = _reducedMatrices[2];
             double[,] documentVectors = reducedV.ToArray();
+
+
             //Since we are going to multiply three matrices, which we can't at once.
             //so we will store the results of qT * uK in temp and multiply it with Sk
             Matrix temp = Matrix.Multiply(transposeQueryMatrix, reducedU);
             Matrix finalQueryVector = Matrix.Multiply(temp, inverseOfS);
-            double[,] what = finalQueryVector.ToArray();
-            double[] finalQuery = Convert2DTo1DArray(what);
-            double[] temptemp = new double[documentVectors.GetLength(1)];
+
+
+            //Converting back from Matrix To 2D Array
+            double[,] finalQueryArray = finalQueryVector.ToArray();
+
+            //Convert this 2D array having single row into 1D Array
+            FinalQueryVectors = Convert2DTo1DArray(finalQueryArray);
+
+            double[] vectorOfDocuments = new double[documentVectors.GetLength(1)];
             for (int i = 0; i < documentVectors.GetLength(0); i++)
             {
                 for (int j = 0; j < documentVectors.GetLength(1); j++)
                 {
-                    temptemp[j] = documentVectors[i, j];
+                    vectorOfDocuments[j] = documentVectors[i, j];
                 }
-                _similarities.Add(CalculateCosineSimilarity(finalQuery, temptemp));
+                _similarities.Add(CosineSimilarity.CalculateCosineSimilarity(FinalQueryVectors, vectorOfDocuments));
             }
            
             return _similarities;
         }
-        private static double CalculateCosineSimilarity(double[] vecA, double[] vecB)
-        {
-            var dotProduct = DotProduct(vecA, vecB);
-            var magnitudeOfA = Magnitude(vecA);
-            var magnitudeOfB = Magnitude(vecB);
-
-            return dotProduct / (magnitudeOfA * magnitudeOfB);
-        }
-
-        private static double DotProduct(double[] vecA, double[] vecB)
-        {
-            double dotProduct = 0;
-            for (var i = 0; i < vecA.Length; i++)
-            {
-                dotProduct += (vecA[i] * vecB[i]);
-            }
-
-            return dotProduct;
-        }
-
-        private static double Magnitude(double[] vector)
-        {
-            return Math.Sqrt(DotProduct(vector, vector));
-        }
+       
         public double[] Convert2DTo1DArray(double[,] convertArray)
         {
             double[] tempSingle = new double[convertArray.Length];

@@ -13,11 +13,20 @@ namespace UPlagSolution
 {
     public partial class ShowQueryVectors : MetroForm
     {
-        public Algorithm MyProperty { get; set; }
+        public Algorithm AlgorithmObject { get; set; }
 
         public ShowQueryVectors()
         {
             InitializeComponent();
+        }
+
+        private void btnShowQueryVectors_Click(object sender, EventArgs e)
+        {
+            double[] queryVectorsToShow = AlgorithmObject.FinalQueryVectors;
+            foreach (var item in queryVectorsToShow)
+            {
+                txtQueryVetors.Text += item.ToString() + " |";
+            }
         }
     }
 }
