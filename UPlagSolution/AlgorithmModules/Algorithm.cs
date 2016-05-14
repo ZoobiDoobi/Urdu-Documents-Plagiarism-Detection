@@ -20,7 +20,7 @@ namespace UPlagSolution.AlgorithmModules
         private int[] _maxTermFreqCorpus;
         private int _maxTermFreqQuery = 0; //Should it be initialized to zero?
         private int[] _docFreq;
-        private int[,] _termFreqOfCorpus; //This is jagged array. What is benefit of using it?
+        private int[,] _termFreqOfCorpus; 
         public double[,] _termFreqOfQuery;
         public double[,] _termWeightCorpus; // this will contain our final tf-idf matrix of corpus
 
@@ -254,21 +254,28 @@ namespace UPlagSolution.AlgorithmModules
         /// <returns></returns>
         public double GetTermFrequency(int term, int doc)
         {
-            int frequency = _termFreqOfCorpus[term, doc];
-            int maxFrequency = _maxTermFreqCorpus[doc];
-            return ((double)frequency / maxFrequency);
+            int frequency = _termFreqOfCorpus[term, doc];//this line will give frequency of a term.
+            int maxFrequency = _maxTermFreqCorpus[doc]; //Max Term Frequency in that document.
+            return ((double)frequency / maxFrequency); //Divide frequency of term with max value of tf in that document.
         }
 
         private double GetInverseDocumentFreq(int term)
         {
-            int df = _docFreq[term];
-            return Math.Log10(_totalCorpusDocs) / df;
+            double idf = 0.0;
+            int df = _docFreq[term];  //frequency of that term in all documents.
+            try
+            {
+                idf = Math.Log(_totalCorpusDocs / df);
+                return idf;
+            }
+            catch(DivideByZeroException dze)
+            {
+                idf = 0.0;
+                return idf;
+            }
+             
         }
-        //private double GetInverseDocumentFreqQuery(int term)
-        //{
-        //    int df = _docFreq[term];
-        //    return Math.Log10(_totalCorpusDocs + 1) / df; //one plus because now query doc also 
-        //}
+        
         public double ComputeTermWeight(int term, int doc)
         {
             double tf = GetTermFrequency(term, doc);

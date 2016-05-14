@@ -27,6 +27,11 @@ namespace UPlagSolution
             {
                 txtQueryVetors.Text += item.ToString() + " |";
             }
+            List<double> similarities = AlgorithmObject._similarities;
+            foreach (var item in similarities)
+            {
+                txtSimilarities.Text += item.ToString();
+            }
         }
     }
 }

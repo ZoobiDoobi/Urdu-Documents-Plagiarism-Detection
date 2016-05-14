@@ -30,6 +30,7 @@
         {
             this.btnShowQueryVectors = new MetroFramework.Controls.MetroButton();
             this.txtQueryVetors = new MetroFramework.Controls.MetroTextBox();
+            this.txtSimilarities = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
             // btnShowQueryVectors
@@ -72,11 +73,42 @@
             this.txtQueryVetors.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtQueryVetors.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // txtSimilarities
+            // 
+            // 
+            // 
+            // 
+            this.txtSimilarities.CustomButton.Image = null;
+            this.txtSimilarities.CustomButton.Location = new System.Drawing.Point(148, 1);
+            this.txtSimilarities.CustomButton.Name = "";
+            this.txtSimilarities.CustomButton.Size = new System.Drawing.Size(327, 327);
+            this.txtSimilarities.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSimilarities.CustomButton.TabIndex = 1;
+            this.txtSimilarities.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSimilarities.CustomButton.UseSelectable = true;
+            this.txtSimilarities.CustomButton.Visible = false;
+            this.txtSimilarities.Lines = new string[0];
+            this.txtSimilarities.Location = new System.Drawing.Point(505, 116);
+            this.txtSimilarities.MaxLength = 32767;
+            this.txtSimilarities.Multiline = true;
+            this.txtSimilarities.Name = "txtSimilarities";
+            this.txtSimilarities.PasswordChar = '\0';
+            this.txtSimilarities.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSimilarities.SelectedText = "";
+            this.txtSimilarities.SelectionLength = 0;
+            this.txtSimilarities.SelectionStart = 0;
+            this.txtSimilarities.Size = new System.Drawing.Size(476, 329);
+            this.txtSimilarities.TabIndex = 2;
+            this.txtSimilarities.UseSelectable = true;
+            this.txtSimilarities.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSimilarities.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // ShowQueryVectors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 468);
+            this.Controls.Add(this.txtSimilarities);
             this.Controls.Add(this.txtQueryVetors);
             this.Controls.Add(this.btnShowQueryVectors);
             this.Name = "ShowQueryVectors";
@@ -89,5 +121,6 @@
 
         private MetroFramework.Controls.MetroButton btnShowQueryVectors;
         private MetroFramework.Controls.MetroTextBox txtQueryVetors;
+        private MetroFramework.Controls.MetroTextBox txtSimilarities;
     }
 }
