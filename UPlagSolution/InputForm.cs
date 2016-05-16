@@ -35,6 +35,7 @@ namespace UPlagSolution
         private void btnAnalyze_Click(object sender, EventArgs e)
         {
             
+
             applyAlgorithm = new Algorithm(corpusDocuments, queryContent);
             applyAlgorithm.RankKValue = Convert.ToInt32( rankValueNumericUpDown.Value);
             List<Matrix> tempSvd = applyAlgorithm.LowRankApproximation();
@@ -48,17 +49,21 @@ namespace UPlagSolution
             resultTexboxes.Add(txtResult5);
             for (int i = 0; i < tempSimilarities.Count; i++)
             {
-                tempSimilarities[i] = tempSimilarities[i] * 100;
-                //txtCosineSimilarity.Text += tempSimilarities[i].ToString("00.00") + "%" + " with document" + (i + 1) + Environment.NewLine;
-                resultTexboxes[i].Text += tempSimilarities[i].ToString("00.00") + "%" + " with document" + (i + 1);
-                if(tempSimilarities[i] >= 75.0)
+                //tempSimilarities[i] = tempSimilarities[i] * 100;
+                //resultTexboxes[i].Text += tempSimilarities[i].ToString("00.00") + "%" + " with document" + (i + 1);
+                if(tempSimilarities[i] >= 0.7071 && tempSimilarities[i] <= 1)
                 {
-                    resultTexboxes[i].BackColor = System.Drawing.Color.Red;
+                    resultTexboxes[i].Text += "Query Document is Similar To Document" + (i + 1) + " (" + tempSimilarities[i].ToString("0.0000") + ")";
+                    resultTexboxes[i].BackColor = System.Drawing.Color.Orange;
+                }
+                else if(tempSimilarities[i] >= 0 && tempSimilarities[i] < 0.7071 )
+                {
+                    resultTexboxes[i].Text += "Query Document is Disimilar To Document" + (i + 1) + " (" + tempSimilarities[i].ToString("0.0000") + ")";
+                    resultTexboxes[i].BackColor = System.Drawing.Color.LightGreen;
                 }
                 else
                 {
-                    resultTexboxes[i].BackColor = System.Drawing.Color.Green;
-
+                    resultTexboxes[i].Text += "Query Document is Unique To Document" + (i + 1) + " (" +tempSimilarities[i].ToString("0.0000") + ")";
                 }
             }
         }
@@ -79,6 +84,7 @@ namespace UPlagSolution
 
         private void InputForm_Load(object sender, EventArgs e)
         {
+            
             //This is temporary implementaion.take only text files in that folder.
             //This line will get the files names of all the text files in Corpus directory
             string[] fileNames = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), @"Corpus"));
@@ -105,6 +111,11 @@ namespace UPlagSolution
             txtResult5.Clear(); txtResult5.BackColor = System.Drawing.Color.White;
             txtResult6.Clear(); txtResult6.BackColor = System.Drawing.Color.White;
             txtResult7.Clear(); txtResult7.BackColor = System.Drawing.Color.White;
+        }
+
+        private void txtResult1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

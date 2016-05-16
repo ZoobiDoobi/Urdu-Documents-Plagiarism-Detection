@@ -235,6 +235,7 @@
             this.txtResult1.ReadOnly = true;
             this.txtResult1.Size = new System.Drawing.Size(1005, 27);
             this.txtResult1.TabIndex = 0;
+            this.txtResult1.TextChanged += new System.EventHandler(this.txtResult1_TextChanged);
             // 
             // btnShowAlgorithmSteps
             // 

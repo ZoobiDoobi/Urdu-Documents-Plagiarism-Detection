@@ -210,7 +210,6 @@ namespace UPlagSolution.AlgorithmModules
 ,"دیکھیں"
 ,"ضوچتی"
 ,"اردگرد"
-,"آج"
 ,"ثٌذی"
 ,"پوچھیں"
 ,"خططرذ"

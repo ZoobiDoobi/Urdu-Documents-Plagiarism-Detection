@@ -255,8 +255,9 @@ namespace UPlagSolution.AlgorithmModules
         public double GetTermFrequency(int term, int doc)
         {
             int frequency = _termFreqOfCorpus[term, doc];//this line will give frequency of a term.
-            int maxFrequency = _maxTermFreqCorpus[doc]; //Max Term Frequency in that document.
-            return ((double)frequency / maxFrequency); //Divide frequency of term with max value of tf in that document.
+            //int maxFrequency = _maxTermFreqCorpus[doc]; //Max Term Frequency in that document.
+            int numberOfWordsInDocument = _corpusDocuments[doc].Length;
+            return ((double)frequency / numberOfWordsInDocument); //Divide frequency of term with max value of tf in that document.
         }
 
         private double GetInverseDocumentFreq(int term)
@@ -265,14 +266,14 @@ namespace UPlagSolution.AlgorithmModules
             int df = _docFreq[term];  //frequency of that term in all documents.
             try
             {
-                idf = Math.Log(_totalCorpusDocs / df);
-                return idf;
+                double temp = ((double)_totalCorpusDocs / df);
+                idf = Math.Log(temp,2);  
             }
             catch(DivideByZeroException dze)
             {
-                idf = 0.0;
-                return idf;
+                idf = 0.0;      
             }
+            return idf;
              
         }
         
@@ -282,7 +283,6 @@ namespace UPlagSolution.AlgorithmModules
             double idf = GetInverseDocumentFreq(term);
             return tf * idf;
         }
-        // public double ComputeTermWeight(int term, )
         public void GenerateTermWeightOfCorpus()
         {
             for (int i = 0; i < _totalUniqueTerms; i++)

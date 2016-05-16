@@ -109,7 +109,7 @@
             this.txtCorpusMatrix.SelectedText = "";
             this.txtCorpusMatrix.SelectionLength = 0;
             this.txtCorpusMatrix.SelectionStart = 0;
-            this.txtCorpusMatrix.Size = new System.Drawing.Size(401, 443);
+            this.txtCorpusMatrix.Size = new System.Drawing.Size(174, 443);
             this.txtCorpusMatrix.TabIndex = 4;
             this.txtCorpusMatrix.UseSelectable = true;
             this.txtCorpusMatrix.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 597);
+            this.ClientSize = new System.Drawing.Size(614, 597);
             this.Controls.Add(this.btnNextSVD);
             this.Controls.Add(this.txtCorpusMatrix);
             this.Controls.Add(this.metroLabel2);
