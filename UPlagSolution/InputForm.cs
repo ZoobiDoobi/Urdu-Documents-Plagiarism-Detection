@@ -34,36 +34,43 @@ namespace UPlagSolution
 
         private void btnAnalyze_Click(object sender, EventArgs e)
         {
-            
 
-            applyAlgorithm = new Algorithm(corpusDocuments, queryContent);
-            applyAlgorithm.RankKValue = Convert.ToInt32( rankValueNumericUpDown.Value);
-            List<Matrix> tempSvd = applyAlgorithm.LowRankApproximation();
-            //txtCorpusVectors.Text = tempSvd[2].ToString();
-            List<double> tempSimilarities = applyAlgorithm.QueryVectors();
-            List<TextBox> resultTexboxes = new List<TextBox>();
-            resultTexboxes.Add(txtResult1);
-            resultTexboxes.Add(txtResult2);
-            resultTexboxes.Add(txtResult3);
-            resultTexboxes.Add(txtResult4);
-            resultTexboxes.Add(txtResult5);
-            for (int i = 0; i < tempSimilarities.Count; i++)
+
+            if (txtInputQuery.Text == "")
             {
-                //tempSimilarities[i] = tempSimilarities[i] * 100;
-                //resultTexboxes[i].Text += tempSimilarities[i].ToString("00.00") + "%" + " with document" + (i + 1);
-                if(tempSimilarities[i] >= 0.7071 && tempSimilarities[i] <= 1)
+                MessageBox.Show("Please Input Some Urdu Content", "Query Cannot Be Empty", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                applyAlgorithm = new Algorithm(corpusDocuments, queryContent);
+                applyAlgorithm.RankKValue = Convert.ToInt32(rankValueNumericUpDown.Value);
+                List<Matrix> tempSvd = applyAlgorithm.LowRankApproximation();
+                //txtCorpusVectors.Text = tempSvd[2].ToString();
+                List<double> tempSimilarities = applyAlgorithm.QueryVectors();
+                List<TextBox> resultTexboxes = new List<TextBox>();
+                resultTexboxes.Add(txtResult1);
+                resultTexboxes.Add(txtResult2);
+                resultTexboxes.Add(txtResult3);
+                resultTexboxes.Add(txtResult4);
+                resultTexboxes.Add(txtResult5);
+                for (int i = 0; i < tempSimilarities.Count; i++)
                 {
-                    resultTexboxes[i].Text += "Query Document is Similar To Document" + (i + 1) + " (" + tempSimilarities[i].ToString("0.0000") + ")";
-                    resultTexboxes[i].BackColor = System.Drawing.Color.Orange;
-                }
-                else if(tempSimilarities[i] >= 0 && tempSimilarities[i] < 0.7071 )
-                {
-                    resultTexboxes[i].Text += "Query Document is Disimilar To Document" + (i + 1) + " (" + tempSimilarities[i].ToString("0.0000") + ")";
-                    resultTexboxes[i].BackColor = System.Drawing.Color.LightGreen;
-                }
-                else
-                {
-                    resultTexboxes[i].Text += "Query Document is Unique To Document" + (i + 1) + " (" +tempSimilarities[i].ToString("0.0000") + ")";
+                    //tempSimilarities[i] = tempSimilarities[i] * 100;
+                    //resultTexboxes[i].Text += tempSimilarities[i].ToString("00.00") + "%" + " with document" + (i + 1);
+                    if (tempSimilarities[i] >= 0.7071 && tempSimilarities[i] <= 1)
+                    {
+                        resultTexboxes[i].Text += "Query Document is Similar To Document" + (i + 1) + " (" + tempSimilarities[i].ToString("0.0000") + ")";
+                        resultTexboxes[i].BackColor = System.Drawing.Color.Orange;
+                    }
+                    else if (tempSimilarities[i] >= 0 && tempSimilarities[i] < 0.7071)
+                    {
+                        resultTexboxes[i].Text += "Query Document is Disimilar To Document" + (i + 1) + " (" + tempSimilarities[i].ToString("0.0000") + ")";
+                        resultTexboxes[i].BackColor = System.Drawing.Color.LightGreen;
+                    }
+                    else
+                    {
+                        resultTexboxes[i].Text += "Query Document is Unique To Document" + (i + 1) + " (" + tempSimilarities[i].ToString("0.0000") + ")";
+                    }
                 }
             }
         }
@@ -116,6 +123,22 @@ namespace UPlagSolution
         private void txtResult1_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnInputClear_Click(object sender, EventArgs e)
+        {
+            txtInputQuery.Clear();
+        }
+
+        private void btnResultsClear_Click(object sender, EventArgs e)
+        {
+            txtResult1.Clear(); txtResult1.BackColor = System.Drawing.Color.White;
+            txtResult2.Clear(); txtResult2.BackColor = System.Drawing.Color.White;
+            txtResult3.Clear(); txtResult3.BackColor = System.Drawing.Color.White;
+            txtResult4.Clear(); txtResult4.BackColor = System.Drawing.Color.White;
+            txtResult5.Clear(); txtResult5.BackColor = System.Drawing.Color.White;
+            txtResult6.Clear(); txtResult6.BackColor = System.Drawing.Color.White;
+            txtResult7.Clear(); txtResult7.BackColor = System.Drawing.Color.White;
         }
     }
 }

@@ -25,12 +25,12 @@ namespace UPlagSolution
             double[] queryVectorsToShow = AlgorithmObject.FinalQueryVectors;
             foreach (var item in queryVectorsToShow)
             {
-                txtQueryVetors.Text += item.ToString() + " |";
+                txtQueryVetors.Text += item.ToString("0.0000") + Environment.NewLine;
             }
             List<double> similarities = AlgorithmObject._similarities;
             foreach (var item in similarities)
             {
-                txtSimilarities.Text += item.ToString();
+                txtSimilarities.Text += item.ToString("0.0000") + Environment.NewLine;
             }
         }
     }

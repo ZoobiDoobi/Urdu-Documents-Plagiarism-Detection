@@ -24,9 +24,9 @@ namespace UPlagSolution
         private void btnShow_Click(object sender, EventArgs e)
         {
             Matrix queryMatrix = new Matrix(AlgorithmObject._termFreqOfQuery);
-            txtQueryMatrix.Text = queryMatrix.ToString();
+            txtQueryMatrix.Text = queryMatrix.ToString("F3", " ", "\n|", "|"+Environment.NewLine,"|");
             Matrix corpusMatrix = new Matrix(AlgorithmObject._termWeightCorpus);
-            txtCorpusMatrix.Text = corpusMatrix.ToString();
+            txtCorpusMatrix.Text = corpusMatrix.ToString("F3", " ", "|", "|"+Environment.NewLine, "|");
         }
 
         private void btnNextSVD_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace UPlagSolution
             ShowSVDForm showSVDform = new ShowSVDForm();
             showSVDform.AlgorithmObject = AlgorithmObject;
             showSVDform.Visible = true;
-            Visible = true;
+            Visible = false;
         }
     }
 }

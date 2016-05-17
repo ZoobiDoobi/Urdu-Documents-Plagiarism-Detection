@@ -34,14 +34,16 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.btnShowNextStep = new MetroFramework.Controls.MetroButton();
             this.btnShowPreprocessing = new MetroFramework.Controls.MetroButton();
+            this.btnBackToInputForm = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(31, 101);
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.Location = new System.Drawing.Point(31, 89);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(196, 38);
+            this.metroLabel1.Size = new System.Drawing.Size(254, 50);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Preprocessed Query Document:\r\n";
             // 
@@ -112,9 +114,10 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(357, 101);
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.Location = new System.Drawing.Point(357, 89);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(203, 38);
+            this.metroLabel2.Size = new System.Drawing.Size(263, 50);
             this.metroLabel2.TabIndex = 2;
             this.metroLabel2.Text = "Preprocessed Corpus Documents\r\n";
             // 
@@ -130,7 +133,7 @@
             // 
             // btnShowPreprocessing
             // 
-            this.btnShowPreprocessing.Location = new System.Drawing.Point(31, 59);
+            this.btnShowPreprocessing.Location = new System.Drawing.Point(31, 50);
             this.btnShowPreprocessing.Name = "btnShowPreprocessing";
             this.btnShowPreprocessing.Size = new System.Drawing.Size(136, 39);
             this.btnShowPreprocessing.TabIndex = 5;
@@ -138,11 +141,21 @@
             this.btnShowPreprocessing.UseSelectable = true;
             this.btnShowPreprocessing.Click += new System.EventHandler(this.btnShowPreprocessing_Click);
             // 
+            // btnBackToInputForm
+            // 
+            this.btnBackToInputForm.Location = new System.Drawing.Point(491, 539);
+            this.btnBackToInputForm.Name = "btnBackToInputForm";
+            this.btnBackToInputForm.Size = new System.Drawing.Size(284, 41);
+            this.btnBackToInputForm.TabIndex = 6;
+            this.btnBackToInputForm.Text = "Back <- Input Form";
+            this.btnBackToInputForm.UseSelectable = true;
+            // 
             // Preporocessing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 610);
+            this.Controls.Add(this.btnBackToInputForm);
             this.Controls.Add(this.btnShowPreprocessing);
             this.Controls.Add(this.btnShowNextStep);
             this.Controls.Add(this.txtPreprocessedCorpus);
@@ -164,5 +177,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroButton btnShowNextStep;
         private MetroFramework.Controls.MetroButton btnShowPreprocessing;
+        private MetroFramework.Controls.MetroButton btnBackToInputForm;
     }
 }

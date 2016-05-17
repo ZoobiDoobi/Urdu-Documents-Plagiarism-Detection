@@ -32,9 +32,6 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnAnalyze = new MetroFramework.Controls.MetroButton();
             this.btnBrowse = new MetroFramework.Controls.MetroButton();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.radioWithoutSynReplacement = new System.Windows.Forms.RadioButton();
-            this.radioWithSynReplacement = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtResult7 = new System.Windows.Forms.TextBox();
             this.txtResult6 = new System.Windows.Forms.TextBox();
@@ -47,7 +44,8 @@
             this.rankValueNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClearAll = new MetroFramework.Controls.MetroButton();
-            this.metroPanel1.SuspendLayout();
+            this.btnInputClear = new MetroFramework.Controls.MetroButton();
+            this.btnResultsClear = new MetroFramework.Controls.MetroButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rankValueNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -97,11 +95,13 @@
             // 
             // btnAnalyze
             // 
+            this.btnAnalyze.BackColor = System.Drawing.Color.ForestGreen;
             this.btnAnalyze.Location = new System.Drawing.Point(833, 247);
             this.btnAnalyze.Name = "btnAnalyze";
             this.btnAnalyze.Size = new System.Drawing.Size(207, 37);
             this.btnAnalyze.TabIndex = 2;
             this.btnAnalyze.Text = "Analyze It";
+            this.btnAnalyze.Theme = MetroFramework.MetroThemeStyle.Light;
             this.btnAnalyze.UseSelectable = true;
             this.btnAnalyze.Click += new System.EventHandler(this.btnAnalyze_Click);
             // 
@@ -115,45 +115,6 @@
             this.btnBrowse.Text = "Browse Document";
             this.btnBrowse.UseSelectable = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.Controls.Add(this.radioWithoutSynReplacement);
-            this.metroPanel1.Controls.Add(this.radioWithSynReplacement);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(23, 247);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(596, 37);
-            this.metroPanel1.TabIndex = 4;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // radioWithoutSynReplacement
-            // 
-            this.radioWithoutSynReplacement.AutoSize = true;
-            this.radioWithoutSynReplacement.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioWithoutSynReplacement.Location = new System.Drawing.Point(226, 10);
-            this.radioWithoutSynReplacement.Name = "radioWithoutSynReplacement";
-            this.radioWithoutSynReplacement.Size = new System.Drawing.Size(235, 24);
-            this.radioWithoutSynReplacement.TabIndex = 3;
-            this.radioWithoutSynReplacement.TabStop = true;
-            this.radioWithoutSynReplacement.Text = "Without Synonym Replacement";
-            this.radioWithoutSynReplacement.UseVisualStyleBackColor = true;
-            // 
-            // radioWithSynReplacement
-            // 
-            this.radioWithSynReplacement.AutoSize = true;
-            this.radioWithSynReplacement.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioWithSynReplacement.Location = new System.Drawing.Point(7, 10);
-            this.radioWithSynReplacement.Name = "radioWithSynReplacement";
-            this.radioWithSynReplacement.Size = new System.Drawing.Size(213, 24);
-            this.radioWithSynReplacement.TabIndex = 2;
-            this.radioWithSynReplacement.TabStop = true;
-            this.radioWithSynReplacement.Text = "With Synonym Replacement";
-            this.radioWithSynReplacement.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -174,6 +135,7 @@
             // 
             // txtResult7
             // 
+            this.txtResult7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtResult7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResult7.Location = new System.Drawing.Point(6, 224);
             this.txtResult7.Name = "txtResult7";
@@ -183,6 +145,7 @@
             // 
             // txtResult6
             // 
+            this.txtResult6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtResult6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResult6.Location = new System.Drawing.Point(6, 191);
             this.txtResult6.Name = "txtResult6";
@@ -192,6 +155,7 @@
             // 
             // txtResult5
             // 
+            this.txtResult5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtResult5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResult5.Location = new System.Drawing.Point(6, 158);
             this.txtResult5.Name = "txtResult5";
@@ -201,6 +165,7 @@
             // 
             // txtResult4
             // 
+            this.txtResult4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtResult4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResult4.Location = new System.Drawing.Point(6, 125);
             this.txtResult4.Name = "txtResult4";
@@ -210,6 +175,7 @@
             // 
             // txtResult3
             // 
+            this.txtResult3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtResult3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResult3.Location = new System.Drawing.Point(6, 92);
             this.txtResult3.Name = "txtResult3";
@@ -219,6 +185,7 @@
             // 
             // txtResult2
             // 
+            this.txtResult2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtResult2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResult2.Location = new System.Drawing.Point(6, 59);
             this.txtResult2.Name = "txtResult2";
@@ -228,7 +195,7 @@
             // 
             // txtResult1
             // 
-            this.txtResult1.BackColor = System.Drawing.Color.LightGray;
+            this.txtResult1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtResult1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResult1.Location = new System.Drawing.Point(6, 26);
             this.txtResult1.Name = "txtResult1";
@@ -250,7 +217,7 @@
             // rankValueNumericUpDown
             // 
             this.rankValueNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rankValueNumericUpDown.Location = new System.Drawing.Point(142, 287);
+            this.rankValueNumericUpDown.Location = new System.Drawing.Point(140, 247);
             this.rankValueNumericUpDown.Maximum = new decimal(new int[] {
             4,
             0,
@@ -274,7 +241,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 287);
+            this.label1.Location = new System.Drawing.Point(23, 247);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 20);
             this.label1.TabIndex = 8;
@@ -290,17 +257,38 @@
             this.btnClearAll.UseSelectable = true;
             this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
             // 
+            // btnInputClear
+            // 
+            this.btnInputClear.Location = new System.Drawing.Point(417, 247);
+            this.btnInputClear.Name = "btnInputClear";
+            this.btnInputClear.Size = new System.Drawing.Size(202, 42);
+            this.btnInputClear.TabIndex = 10;
+            this.btnInputClear.Text = "Clear Input";
+            this.btnInputClear.UseSelectable = true;
+            this.btnInputClear.Click += new System.EventHandler(this.btnInputClear_Click);
+            // 
+            // btnResultsClear
+            // 
+            this.btnResultsClear.Location = new System.Drawing.Point(417, 299);
+            this.btnResultsClear.Name = "btnResultsClear";
+            this.btnResultsClear.Size = new System.Drawing.Size(202, 42);
+            this.btnResultsClear.TabIndex = 11;
+            this.btnResultsClear.Text = "Clear Results";
+            this.btnResultsClear.UseSelectable = true;
+            this.btnResultsClear.Click += new System.EventHandler(this.btnResultsClear_Click);
+            // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1063, 644);
+            this.Controls.Add(this.btnResultsClear);
+            this.Controls.Add(this.btnInputClear);
             this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rankValueNumericUpDown);
             this.Controls.Add(this.btnShowAlgorithmSteps);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.btnAnalyze);
             this.Controls.Add(this.metroLabel1);
@@ -309,8 +297,6 @@
             this.Text = "Check Plagiarism Against Documents";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InputForm_FormClosing);
             this.Load += new System.EventHandler(this.InputForm_Load);
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rankValueNumericUpDown)).EndInit();
@@ -325,9 +311,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btnAnalyze;
         private MetroFramework.Controls.MetroButton btnBrowse;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private System.Windows.Forms.RadioButton radioWithSynReplacement;
-        private System.Windows.Forms.RadioButton radioWithoutSynReplacement;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtResult5;
         private System.Windows.Forms.TextBox txtResult4;
@@ -340,6 +323,8 @@
         private System.Windows.Forms.NumericUpDown rankValueNumericUpDown;
         private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroButton btnClearAll;
+        private MetroFramework.Controls.MetroButton btnInputClear;
+        private MetroFramework.Controls.MetroButton btnResultsClear;
     }
 }
 

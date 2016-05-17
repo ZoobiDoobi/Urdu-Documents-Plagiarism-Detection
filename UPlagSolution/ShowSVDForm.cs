@@ -23,9 +23,9 @@ namespace UPlagSolution
 
         private void btnNextRank_Click(object sender, EventArgs e)
         {
-            ShowQueryVectors showQueryVectors = new ShowQueryVectors();
-            showQueryVectors.AlgorithmObject = AlgorithmObject;
-            showQueryVectors.Visible = true;
+            ShowRankApprox showRankApprox = new ShowRankApprox();
+            showRankApprox.AlgorithmObject = AlgorithmObject;
+            showRankApprox.Visible = true;
 
             Visible = false;
         }
@@ -33,9 +33,9 @@ namespace UPlagSolution
         private void btnShow_Click(object sender, EventArgs e)
         {
             SVD tempSVd = AlgorithmObject.CalculateSVD();
-            txtSMatrix.Text = tempSVd.S.ToString();
-            txtUMatrix.Text = tempSVd.U.ToString();
-            txtVMatrix.Text = tempSVd.V.ToString();
+            txtSMatrix.Text = tempSVd.S.ToString("F3", " ", "\n|", "|" + Environment.NewLine, "|");
+            txtUMatrix.Text = tempSVd.U.ToString("F3", "", "\n|", "|" + Environment.NewLine, "|");
+            txtVMatrix.Text = tempSVd.V.ToString("F3", " ", "\n|", "|" + Environment.NewLine, "|");
         }
     }
 }
