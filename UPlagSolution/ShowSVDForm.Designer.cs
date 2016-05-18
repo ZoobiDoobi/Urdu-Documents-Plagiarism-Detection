@@ -36,7 +36,6 @@
             this.txtVMatrix = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.btnNextQueryVectors = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // btnShow
@@ -66,7 +65,7 @@
             // 
             // 
             this.txtUMatrix.CustomButton.Image = null;
-            this.txtUMatrix.CustomButton.Location = new System.Drawing.Point(96, 1);
+            this.txtUMatrix.CustomButton.Location = new System.Drawing.Point(47, 1);
             this.txtUMatrix.CustomButton.Name = "";
             this.txtUMatrix.CustomButton.Size = new System.Drawing.Size(393, 393);
             this.txtUMatrix.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -138,7 +137,7 @@
             // 
             // 
             this.txtVMatrix.CustomButton.Image = null;
-            this.txtVMatrix.CustomButton.Location = new System.Drawing.Point(-154, 1);
+            this.txtVMatrix.CustomButton.Location = new System.Drawing.Point(-105, 1);
             this.txtVMatrix.CustomButton.Name = "";
             this.txtVMatrix.CustomButton.Size = new System.Drawing.Size(393, 393);
             this.txtVMatrix.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -183,21 +182,11 @@
             this.btnNextQueryVectors.UseSelectable = true;
             this.btnNextQueryVectors.Click += new System.EventHandler(this.btnNextRank_Click);
             // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(519, 563);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(240, 38);
-            this.metroButton1.TabIndex = 8;
-            this.metroButton1.Text = "Previous <- Matrices Form";
-            this.metroButton1.UseSelectable = true;
-            // 
             // ShowSVDForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 614);
-            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.btnNextQueryVectors);
             this.Controls.Add(this.txtVMatrix);
             this.Controls.Add(this.metroLabel3);
@@ -223,6 +212,5 @@
         private MetroFramework.Controls.MetroTextBox txtVMatrix;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroButton btnNextQueryVectors;
-        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

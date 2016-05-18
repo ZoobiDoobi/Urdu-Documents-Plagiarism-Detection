@@ -77,8 +77,7 @@ namespace UPlagSolution
 
         private void InputForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            new Menu().Visible = true;
-            Visible = false;
+            Application.ExitThread();
         }
 
         private void btnShowAlgorithmSteps_Click(object sender, EventArgs e)

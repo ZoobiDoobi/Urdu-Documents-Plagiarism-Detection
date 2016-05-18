@@ -36,8 +36,7 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.btnBackInputForm = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -152,31 +151,22 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
-            // metroButton1
+            // btnBackInputForm
             // 
-            this.metroButton1.Location = new System.Drawing.Point(775, 560);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(191, 41);
-            this.metroButton1.TabIndex = 7;
-            this.metroButton1.Text = "Back <-  Input Form";
-            this.metroButton1.UseSelectable = true;
-            // 
-            // metroButton2
-            // 
-            this.metroButton2.Location = new System.Drawing.Point(490, 560);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(279, 41);
-            this.metroButton2.TabIndex = 8;
-            this.metroButton2.Text = "Back <- Low Rank Approximation";
-            this.metroButton2.UseSelectable = true;
+            this.btnBackInputForm.Location = new System.Drawing.Point(775, 560);
+            this.btnBackInputForm.Name = "btnBackInputForm";
+            this.btnBackInputForm.Size = new System.Drawing.Size(191, 41);
+            this.btnBackInputForm.TabIndex = 7;
+            this.btnBackInputForm.Text = "Back <-  Input Form";
+            this.btnBackInputForm.UseSelectable = true;
+            this.btnBackInputForm.Click += new System.EventHandler(this.btnBackInputForm_Click);
             // 
             // ShowQueryVectors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 624);
-            this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnBackInputForm);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel2);
@@ -202,7 +192,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton btnBackInputForm;
     }
 }

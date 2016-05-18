@@ -34,7 +34,6 @@
             this.txtCorpusMatrix = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.btnNextSVD = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // btnShow
@@ -137,21 +136,11 @@
             this.btnNextSVD.UseSelectable = true;
             this.btnNextSVD.Click += new System.EventHandler(this.btnNextSVD_Click);
             // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(492, 575);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(216, 36);
-            this.metroButton1.TabIndex = 6;
-            this.metroButton1.Text = "Back <- Preprocessing";
-            this.metroButton1.UseSelectable = true;
-            // 
             // ShowMatrices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 643);
-            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.btnNextSVD);
             this.Controls.Add(this.txtCorpusMatrix);
             this.Controls.Add(this.metroLabel2);
@@ -173,6 +162,5 @@
         private MetroFramework.Controls.MetroTextBox txtCorpusMatrix;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroButton btnNextSVD;
-        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

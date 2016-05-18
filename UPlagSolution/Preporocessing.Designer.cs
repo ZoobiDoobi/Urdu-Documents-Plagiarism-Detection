@@ -34,7 +34,6 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.btnShowNextStep = new MetroFramework.Controls.MetroButton();
             this.btnShowPreprocessing = new MetroFramework.Controls.MetroButton();
-            this.btnBackToInputForm = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -141,21 +140,11 @@
             this.btnShowPreprocessing.UseSelectable = true;
             this.btnShowPreprocessing.Click += new System.EventHandler(this.btnShowPreprocessing_Click);
             // 
-            // btnBackToInputForm
-            // 
-            this.btnBackToInputForm.Location = new System.Drawing.Point(491, 539);
-            this.btnBackToInputForm.Name = "btnBackToInputForm";
-            this.btnBackToInputForm.Size = new System.Drawing.Size(284, 41);
-            this.btnBackToInputForm.TabIndex = 6;
-            this.btnBackToInputForm.Text = "Back <- Input Form";
-            this.btnBackToInputForm.UseSelectable = true;
-            // 
             // Preporocessing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 610);
-            this.Controls.Add(this.btnBackToInputForm);
             this.Controls.Add(this.btnShowPreprocessing);
             this.Controls.Add(this.btnShowNextStep);
             this.Controls.Add(this.txtPreprocessedCorpus);
@@ -177,6 +166,5 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroButton btnShowNextStep;
         private MetroFramework.Controls.MetroButton btnShowPreprocessing;
-        private MetroFramework.Controls.MetroButton btnBackToInputForm;
     }
 }

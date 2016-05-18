@@ -36,5 +36,11 @@ namespace UPlagSolution
             showSVDform.Visible = true;
             Visible = false;
         }
+
+        private void backBtnPreprocessing_Click(object sender, EventArgs e)
+        {
+            new Preporocessing().Visible = true;
+            Visible = false;
+        }
     }
 }

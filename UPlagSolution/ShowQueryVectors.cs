@@ -33,5 +33,17 @@ namespace UPlagSolution
                 txtSimilarities.Text += item.ToString("0.0000") + Environment.NewLine;
             }
         }
+
+        private void btnBackLowApproximation_Click(object sender, EventArgs e)
+        {
+            new ShowRankApprox().Visible = true;
+            Visible = false;
+        }
+
+        private void btnBackInputForm_Click(object sender, EventArgs e)
+        {
+            new InputForm().Visible = true;
+            Visible = false;
+        }
     }
 }

@@ -37,5 +37,11 @@ namespace UPlagSolution
             txtUMatrix.Text = tempSVd.U.ToString("F3", "", "\n|", "|" + Environment.NewLine, "|");
             txtVMatrix.Text = tempSVd.V.ToString("F3", " ", "\n|", "|" + Environment.NewLine, "|");
         }
+
+        private void backMatricesForm_Click(object sender, EventArgs e)
+        {
+            new ShowMatrices().Visible = true;
+            Visible = false;
+        }
     }
 }

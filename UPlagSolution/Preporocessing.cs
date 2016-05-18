@@ -42,5 +42,11 @@ namespace UPlagSolution
             showMatricesForm.Visible = true;
             Visible = false;
         }
+
+        private void btnBackToInputForm_Click(object sender, EventArgs e)
+        {
+            new InputForm().Visible = true;
+            Visible = false;
+        }
     }
 }

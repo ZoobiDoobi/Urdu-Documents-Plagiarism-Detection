@@ -35,7 +35,6 @@
             this.txtReducedUMatrix = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnShow = new MetroFramework.Controls.MetroButton();
-            this.btnPreviousSvdForm = new MetroFramework.Controls.MetroButton();
             this.btnNextQueryVectorsForm = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
@@ -173,15 +172,6 @@
             this.btnShow.UseSelectable = true;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
-            // btnPreviousSvdForm
-            // 
-            this.btnPreviousSvdForm.Location = new System.Drawing.Point(519, 552);
-            this.btnPreviousSvdForm.Name = "btnPreviousSvdForm";
-            this.btnPreviousSvdForm.Size = new System.Drawing.Size(240, 51);
-            this.btnPreviousSvdForm.TabIndex = 15;
-            this.btnPreviousSvdForm.Text = "Previous <- Singular Value Decomposition";
-            this.btnPreviousSvdForm.UseSelectable = true;
-            // 
             // btnNextQueryVectorsForm
             // 
             this.btnNextQueryVectorsForm.Location = new System.Drawing.Point(765, 552);
@@ -197,7 +187,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 626);
-            this.Controls.Add(this.btnPreviousSvdForm);
             this.Controls.Add(this.btnNextQueryVectorsForm);
             this.Controls.Add(this.txtReducedVMatrix);
             this.Controls.Add(this.metroLabel3);
@@ -222,7 +211,6 @@
         private MetroFramework.Controls.MetroTextBox txtReducedUMatrix;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btnShow;
-        private MetroFramework.Controls.MetroButton btnPreviousSvdForm;
         private MetroFramework.Controls.MetroButton btnNextQueryVectorsForm;
     }
 }

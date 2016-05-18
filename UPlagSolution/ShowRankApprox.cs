@@ -40,5 +40,11 @@ namespace UPlagSolution
             showQueryVectors.Visible = true;
             Visible = false;
         }
+
+        private void btnPreviousSvdForm_Click(object sender, EventArgs e)
+        {
+            new ShowSVDForm().Visible = true;
+            Visible = false;
+        }
     }
 }
